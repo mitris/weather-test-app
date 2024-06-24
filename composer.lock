@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3a399516b5a07f6936781cdb6e4b0512",
+    "content-hash": "136e5e38f0bc757226b5498957d33e6c",
     "packages": [
         {
             "name": "anourvalar/eloquent-serialize",
@@ -1042,6 +1042,83 @@
                 }
             ],
             "time": "2024-02-05T11:56:58+00:00"
+        },
+        {
+            "name": "dotswan/filament-map-picker",
+            "version": "v1.2.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dotswan/filament-map-picker.git",
+                "reference": "0c1fa9e347b38bc60212c6ca3097289f781a3b0b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dotswan/filament-map-picker/zipball/0c1fa9e347b38bc60212c6ca3097289f781a3b0b",
+                "reference": "0c1fa9e347b38bc60212c6ca3097289f781a3b0b",
+                "shasum": ""
+            },
+            "require": {
+                "filament/filament": "^3.0",
+                "illuminate/contracts": "^10.0 || ^11.0",
+                "php": "^8.1",
+                "spatie/laravel-package-tools": "^1.15.0"
+            },
+            "require-dev": {
+                "laravel/pint": "^1.0",
+                "nunomaduro/collision": "^7.9",
+                "nunomaduro/larastan": "^2.0.1",
+                "orchestra/testbench": "^8.0",
+                "pestphp/pest": "^2.0",
+                "pestphp/pest-plugin-arch": "^2.0",
+                "pestphp/pest-plugin-laravel": "^2.0",
+                "phpstan/extension-installer": "^1.1",
+                "phpstan/phpstan-deprecation-rules": "^1.0",
+                "phpstan/phpstan-phpunit": "^1.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Dotswan\\MapPicker\\MapPickerServiceProvider"
+                    ],
+                    "aliases": {
+                        "MapPicker": "Dotswan\\MapPicker\\Facades\\MapPicker"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Dotswan\\MapPicker\\": "src/",
+                    "Dotswan\\MapPicker\\Database\\Factories\\": "database/factories/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Dotswan",
+                    "email": "tech@dotswan.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Easily pick and retrieve geo-coordinates using a map-based interface in your Filament applications.",
+            "homepage": "https://github.com/dotswan/filament-map-picker",
+            "keywords": [
+                "dotswan",
+                "filament",
+                "filament-map-picker",
+                "filament-v3",
+                "filamentphp",
+                "laravel",
+                "map-picker"
+            ],
+            "support": {
+                "issues": "https://github.com/dotswan/filament-map-picker/issues",
+                "source": "https://github.com/dotswan/filament-map-picker"
+            },
+            "time": "2024-06-04T14:41:50+00:00"
         },
         {
             "name": "dragonmantank/cron-expression",
@@ -2146,6 +2223,278 @@
                 }
             ],
             "time": "2023-12-03T19:50:20+00:00"
+        },
+        {
+            "name": "hasnayeen/themes",
+            "version": "v3.0.23",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Hasnayeen/themes.git",
+                "reference": "6f5cc1719719591d31c30e6f971fe5cede7aa000"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Hasnayeen/themes/zipball/6f5cc1719719591d31c30e6f971fe5cede7aa000",
+                "reference": "6f5cc1719719591d31c30e6f971fe5cede7aa000",
+                "shasum": ""
+            },
+            "require": {
+                "filament/filament": "^3.0",
+                "illuminate/contracts": "^10.0|^11.0",
+                "php": "^8.1",
+                "spatie/laravel-package-tools": "^1.15.0"
+            },
+            "require-dev": {
+                "laravel/pint": "^1.0",
+                "nunomaduro/collision": "^7.9",
+                "nunomaduro/larastan": "^2.0.1",
+                "orchestra/testbench": "^8.0|^9.0",
+                "pestphp/pest": "^2.0",
+                "pestphp/pest-plugin-arch": "^2.0",
+                "pestphp/pest-plugin-laravel": "^2.0",
+                "phpstan/extension-installer": "^1.1",
+                "phpstan/phpstan-deprecation-rules": "^1.0",
+                "phpstan/phpstan-phpunit": "^1.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Hasnayeen\\Themes\\ThemesServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Hasnayeen\\Themes\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Hasnayeen",
+                    "email": "searching.nehal@gmail.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Themes for Filament panels",
+            "homepage": "https://github.com/hasnayeen/themes",
+            "keywords": [
+                "Hasnayeen",
+                "filament",
+                "laravel",
+                "themes"
+            ],
+            "support": {
+                "issues": "https://github.com/hasnayeen/themes/issues",
+                "source": "https://github.com/hasnayeen/themes"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/Hasnayeen",
+                    "type": "github"
+                }
+            ],
+            "time": "2024-04-10T06:31:54+00:00"
+        },
+        {
+            "name": "humaidem/filament-map-picker",
+            "version": "v0.1.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/humaidem/filament-map-picker.git",
+                "reference": "1bc7dceb51c21b0a645c3775d2ed620dcb63e634"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/humaidem/filament-map-picker/zipball/1bc7dceb51c21b0a645c3775d2ed620dcb63e634",
+                "reference": "1bc7dceb51c21b0a645c3775d2ed620dcb63e634",
+                "shasum": ""
+            },
+            "require": {
+                "filament/filament": "^3.0",
+                "php": "^8.1",
+                "spatie/laravel-package-tools": "^1.16"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Humaidem\\FilamentMapPicker\\FilamentMapPickerServiceProvider"
+                    ],
+                    "aliases": {
+                        "MapPicker": "Humaidem\\FilamentMapPicker\\Facades\\MapPicker"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Humaidem\\FilamentMapPicker\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "homepage": "https://github.com/humaidem/filament-map-picker",
+            "support": {
+                "issues": "https://github.com/humaidem/filament-map-picker/issues",
+                "source": "https://github.com/humaidem/filament-map-picker"
+            },
+            "time": "2023-11-20T19:40:40+00:00"
+        },
+        {
+            "name": "joaopaulolndev/filament-general-settings",
+            "version": "v1.0.11",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/joaopaulolndev/filament-general-settings.git",
+                "reference": "86ca37c6610a214d0d26bd9cbd31d19887e7a6cb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/joaopaulolndev/filament-general-settings/zipball/86ca37c6610a214d0d26bd9cbd31d19887e7a6cb",
+                "reference": "86ca37c6610a214d0d26bd9cbd31d19887e7a6cb",
+                "shasum": ""
+            },
+            "require": {
+                "filament/filament": "^3.0",
+                "php": "^8.1",
+                "spatie/laravel-package-tools": "^1.15.0"
+            },
+            "require-dev": {
+                "laravel/pint": "^1.0",
+                "nunomaduro/collision": "^7.9",
+                "nunomaduro/larastan": "^2.0.1",
+                "orchestra/testbench": "^8.0",
+                "pestphp/pest": "^2.1",
+                "pestphp/pest-plugin-arch": "^2.0",
+                "pestphp/pest-plugin-laravel": "^2.0",
+                "phpstan/extension-installer": "^1.1",
+                "phpstan/phpstan-deprecation-rules": "^1.0",
+                "phpstan/phpstan-phpunit": "^1.0",
+                "spatie/laravel-ray": "^1.26"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Joaopaulolndev\\FilamentGeneralSettings\\FilamentGeneralSettingsServiceProvider"
+                    ],
+                    "aliases": {
+                        "FilamentGeneralSettings": "Joaopaulolndev\\FilamentGeneralSettings\\Facades\\FilamentGeneralSettings"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Joaopaulolndev\\FilamentGeneralSettings\\": "src/",
+                    "Joaopaulolndev\\FilamentGeneralSettings\\Database\\Factories\\": "database/factories/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "João Paulo Leite Nascimento",
+                    "email": "joaopauloln7@gmail.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Filament package to manage general settings",
+            "homepage": "https://github.com/joaopaulolndev/filament-general-settings",
+            "keywords": [
+                "filament-general-settings",
+                "joaopaulolndev",
+                "laravel"
+            ],
+            "support": {
+                "issues": "https://github.com/joaopaulolndev/filament-general-settings/issues",
+                "source": "https://github.com/joaopaulolndev/filament-general-settings"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/joaopaulolndev",
+                    "type": "github"
+                }
+            ],
+            "time": "2024-06-16T10:11:06+00:00"
+        },
+        {
+            "name": "josespinal/filament-record-navigation",
+            "version": "v2.0.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/josespinal/filament-record-navigation.git",
+                "reference": "6a6ef6ec2e66f9738ee5037d22192d58f38a7cb1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/josespinal/filament-record-navigation/zipball/6a6ef6ec2e66f9738ee5037d22192d58f38a7cb1",
+                "reference": "6a6ef6ec2e66f9738ee5037d22192d58f38a7cb1",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/contracts": "^10.0||^11.0",
+                "php": "^8.2",
+                "spatie/laravel-package-tools": "^1.16"
+            },
+            "require-dev": {
+                "larastan/larastan": "^2.9",
+                "laravel/pint": "^1.14",
+                "nunomaduro/collision": "^8.1.1||^7.10.0",
+                "orchestra/testbench": "^9.0.0||^8.22.0",
+                "pestphp/pest": "^2.34",
+                "pestphp/pest-plugin-arch": "^2.7",
+                "pestphp/pest-plugin-laravel": "^2.3"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "JoseEspinal\\RecordNavigation\\RecordNavigationServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "JoseEspinal\\RecordNavigation\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jose Espinal",
+                    "email": "jespinal@industria.com.do",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Record navigation from views",
+            "homepage": "https://github.com/josespinal/filament-record-navigation",
+            "keywords": [
+                "Jose Espinal",
+                "filament-record-navigation",
+                "laravel"
+            ],
+            "support": {
+                "issues": "https://github.com/josespinal/filament-record-navigation/issues",
+                "source": "https://github.com/josespinal/filament-record-navigation/tree/v2.0.4"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/Jose Espinal",
+                    "type": "github"
+                }
+            ],
+            "time": "2024-06-05T22:01:23+00:00"
         },
         {
             "name": "kirschbaum-development/eloquent-power-joins",
@@ -3311,6 +3660,73 @@
                 }
             ],
             "time": "2024-06-18T11:10:42+00:00"
+        },
+        {
+            "name": "malzariey/filament-daterangepicker-filter",
+            "version": "2.7.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/malzariey/filament-daterangepicker-filter.git",
+                "reference": "37dca49a04593be4df207107fe62131a02954d8a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/malzariey/filament-daterangepicker-filter/zipball/37dca49a04593be4df207107fe62131a02954d8a",
+                "reference": "37dca49a04593be4df207107fe62131a02954d8a",
+                "shasum": ""
+            },
+            "require": {
+                "filament/filament": "^2.0|^3.0",
+                "illuminate/contracts": "^8.0|^9.0|^10.0|^11.0",
+                "php": "^8.0",
+                "spatie/laravel-package-tools": "^1.16.4"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Malzariey\\FilamentDaterangepickerFilter\\FilamentDaterangepickerFilterServiceProvider"
+                    ],
+                    "aliases": {
+                        "FilamentDaterangepickerFilter": "Malzariey\\FilamentDaterangepickerFilter\\Facades\\FilamentDaterangepickerFilter"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Malzariey\\FilamentDaterangepickerFilter\\": "src",
+                    "Malzariey\\FilamentDaterangepickerFilter\\Database\\Factories\\": "database/factories"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Majid Al-Zariey",
+                    "email": "malzariey@gmail.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "This package uses daterangepciker library to filter date by a range or predefined date ranges (Today , Yesterday ...etc)",
+            "homepage": "https://github.com/malzariey/filament-daterangepicker-filter",
+            "keywords": [
+                "Malzariey",
+                "filament-daterangepicker-filter",
+                "laravel"
+            ],
+            "support": {
+                "issues": "https://github.com/malzariey/filament-daterangepicker-filter/issues",
+                "source": "https://github.com/malzariey/filament-daterangepicker-filter/tree/2.7.3"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/Malzariey",
+                    "type": "github"
+                }
+            ],
+            "time": "2024-06-07T06:30:43+00:00"
         },
         {
             "name": "masterminds/html5",
