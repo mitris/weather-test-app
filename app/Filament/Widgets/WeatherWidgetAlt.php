@@ -20,11 +20,6 @@ class WeatherWidgetAlt extends Widget
 
     protected int | string | array $columnSpan = 2;
 
-    // public function getColumns(): int | string | array
-    // {
-    //     return 2;
-    // }
-
     #[Computed]
     public function getWeatherData()
     {

@@ -32,19 +32,6 @@ class VenueResource extends Resource
                         TextInput::make('name')
                             ->required(),
                     ]),
-                    Section::make([
-                        OSMMap::make('location')
-                            ->label('Location')
-                            ->showMarker()
-                            ->draggable()
-                            ->extraControl([
-                                'zoomDelta'           => 1,
-                                'zoomSnap'            => 0.25,
-                                'wheelPxPerZoomLevel' => 60
-                            ])
-                            // tiles url (refer to httpsw://www.spatialbias.com/2018/02/qgis-3.0-xyz-tile-layers/)
-                            ->tilesUrl('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}')
-                    ]),
                 ])->columnSpanFull(),
 
 

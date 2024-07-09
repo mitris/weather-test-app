@@ -17,6 +17,9 @@ use Filament\Forms\Components\Section;
 use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\Group;
 use Filament\Forms\Components\Grid;
+use Filament\Forms\Components\DatePicker;
+use Awcodes\Curator\Components\Tables\CuratorColumn;
+use Awcodes\Curator\Components\Forms\CuratorPicker;
 use App\Models\Event;
 use App\Filament\Resources\EventResource\Pages\ListEvents;
 use App\Filament\Resources\EventResource\Pages\EditEvent;
@@ -53,48 +56,17 @@ class EventResource extends Resource
                                 ->columnSpanFull(),
                             RichEditor::make('description')
                                 ->columnSpanFull(),
-                            DateRangePicker::make('date_start')
-                                ->columnSpan(4)
-                                ->startDate(now())
-                                ->defaultToday()
-                                ->alwaysShowCalendar()
-                                ->timePicker(false)
-                                ->singleCalendar()
-                                ->autoApply()
-                                ->displayFormat('YYYY-MM-DD')
-                                ->format('YYYY-MM-DD')
-                                ->disableRanges()
-                                ->separator(' to ')
-                                // ->default(fn (Event $event) => $event->get('date_start') . ' to ' . $event->get('date_end'))
-                                ->endDate(now()->addYear())
-                                ->disableClear(),
-                            DateRangePicker::make('date_end',)
-                                ->columnSpan(4)
-                                ->startDate(now())
-                                ->defaultToday()
-                                ->alwaysShowCalendar()
-                                ->timePicker(false)
-                                ->singleCalendar()
-                                ->autoApply()
-                                ->displayFormat('YYYY-MM-DD')
-                                ->format('YYYY-MM-DD')
-                                ->disableRanges()
-                                ->separator(' to ')
-                                // ->default(fn (Event $event) => $event->get('date_start') . ' to ' . $event->get('date_end'))
-                                ->endDate(now()->addYear())
-                                ->disableClear()
+                            DatePicker::make('date_start'),
                         ])
                             ->columnSpan(8)
                             ->columns(12),
                         Group::make([
-                            SpatieMediaLibraryFileUpload::make('poster')
-                                ->directory('posters')
-                                ->conversion('thumb')
-                                ->responsiveImages(),
-                            SpatieMediaLibraryFileUpload::make('media')
-                                ->directory('medias')
-                                ->multiple()
-                                ->reorderable(),
+                            CuratorPicker::make('poster')
+
+                            // SpatieMediaLibraryFileUpload::make('media')
+                            //     ->directory('medias')
+                            //     ->multiple()
+                            //     ->reorderable(),
                         ])->columnSpan(4),
                     ])->columns(12)
                 ])
@@ -105,11 +77,10 @@ class EventResource extends Resource
     {
         return $table
             ->columns([
-                ImageColumn::make('poster')
-                    ->circular(),
-                TextColumn::make('preview')->getStateUsing(function (Event $event) {
-                    return $event->name . '<div class="text-slate-500 bg-red-200"><small>Date: <b>' . implode(' - ', [$event->date_start->format('Y.m.d, H:i'), $event->date_end->format('Y.m.d, H:i')]) . ' </b></small></div>';
-                })->html(),
+                CuratorColumn::make('poster')
+                    ->size(40),
+                TextColumn::make('name'),
+                TextColumn::make('date_start'),
                 TextColumn::make('venue.name')
                     ->numeric()
                     ->sortable(),

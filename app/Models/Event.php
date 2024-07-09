@@ -2,29 +2,21 @@
 
 namespace App\Models;
 
-use Spatie\MediaLibrary\MediaCollections\Models\Media;
-use Spatie\MediaLibrary\InteractsWithMedia;
-use Spatie\MediaLibrary\HasMedia;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Casts\Attribute;
+use Awcodes\Curator\Models\Media;
 use App\Models\Venue;
 
-class Event extends Model implements HasMedia
+class Event extends Model
 {
-    use HasFactory, InteractsWithMedia;
+    use HasFactory;
 
     protected $guarded = [];
 
-    protected $append = [
-        'period'
-    ];
-
     protected $casts = [
-        'media' => 'array',
-        'date_start' => 'date',
-        'date_end' => 'date',
+        'date_start' => 'date'
     ];
 
     public $timestamps = false;
@@ -33,17 +25,8 @@ class Event extends Model implements HasMedia
     {
         return $this->belongsTo(Venue::class)->withDefault();
     }
-
-    protected function getPeriodAttribute()
+    public function posterImage(): BelongsTo
     {
-        return $this->date_start?->format('Y-m-d') . 'to ' . $this->date_end?->format('Y-m-d');
-    }
-
-    public function registerMediaConversions(?Media $media = null): void
-    {
-        $this->addMediaConversion('thumb')
-            ->width(368)
-            ->height(232)
-            ->sharpen(10);
+        return $this->belongsTo(Media::class, 'poster', 'id');
     }
 }

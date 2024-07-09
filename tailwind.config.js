@@ -18,6 +18,8 @@ export default {
         "./storage/framework/views/*.php",
         "./resources/views/**/*.blade.php",
         "./resources/js/**/*.tsx",
+
+        "./vendor/awcodes/filament-curator/resources/**/*.blade.php",
     ],
 
     theme: {

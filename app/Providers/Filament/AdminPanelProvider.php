@@ -58,6 +58,15 @@ class AdminPanelProvider extends PanelProvider
             ->plugins([
                 FilamentGeneralSettingsPlugin::make(),
                 ThemesPlugin::make(),
+                \Awcodes\Curator\CuratorPlugin::make()
+                    ->label('Media')
+                    ->pluralLabel('Media')
+                    ->navigationIcon('heroicon-o-photo')
+                    ->navigationGroup('Content')
+                    ->navigationSort(3)
+                    ->navigationCountBadge()
+                    ->registerNavigation(false)
+                    ->defaultListView('grid' || 'list')
             ]);
     }
 }

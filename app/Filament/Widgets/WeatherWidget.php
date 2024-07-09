@@ -2,6 +2,7 @@
 
 namespace App\Filament\Widgets;
 
+use Livewire\Attributes\Computed;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Cache;
@@ -16,8 +17,9 @@ use App\Decorators\WeatherInfoDecorator;
 class WeatherWidget extends Widget
 {
     protected static string $view = 'filament.widgets.weather';
-    
 
+
+    #[Computed]
     public function getWeatherData()
     {
         return

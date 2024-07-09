@@ -18,22 +18,6 @@ class WeatherService
     public function getWeatherData($latitude, $longitude): WeatherInfoDecorator
     {
         $cacheKey = md5(config('services.weather_info.cache_prefix') . $latitude . ',' . $longitude);
-        // Cache::rememberForever(md5(rand()), fn () => gzcompress(json_encode(cache($cacheKey . '::rawData'))));
-
-        // dd(
-        //     mb_strlen(json_encode(cache($cacheKey))),
-        //     mb_strlen(gzcompress(json_encode(cache($cacheKey)))),
-        //     mb_strlen(gzcompress(serialize(cache($cacheKey)))),
-        //     mb_strlen(gzdeflate(json_encode(cache($cacheKey)))),
-        //     mb_strlen(gzdeflate(serialize(cache($cacheKey)))),
-        //     gzcompress(json_encode(cache($cacheKey))),
-        //     gzcompress(serialize(cache($cacheKey))),
-        //     json_decode(gzuncompress(gzcompress(json_encode(cache($cacheKey))))),
-        //     json_decode(gzinflate(gzdeflate(json_encode(cache($cacheKey))))), // compresses approximately 20 times
-        // );
-
-        cache()->forget($cacheKey);
-
 
         $weatherData = config('services.weather_info.cache')
             ? Cache::remember($cacheKey, now()->diffInSeconds(now()->endOfHour()), function () use ($latitude, $longitude) {
@@ -140,7 +124,6 @@ class WeatherService
             ),
             'aggregated' => $aggregated,
             'hours' => $data['hours']->toArray(),
-            // 'windDescription' => BeaufortScale::getDescriptionByWindSpeed($aggregated['windSpeed']['avg'] * 3.6), // Конвертация из м/с в км/ч
         ];
     }
 }
