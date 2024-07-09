@@ -12,15 +12,14 @@ use Illuminate\Cookie\Middleware\EncryptCookies;
 use Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse;
 use Hasnayeen\Themes\ThemesPlugin;
 use Hasnayeen\Themes\Http\Middleware\SetTheme;
-use Filament\Widgets;
 use Filament\Support\Colors\Color;
 use Filament\PanelProvider;
 use Filament\Panel;
-use Filament\Pages;
 use Filament\Http\Middleware\DispatchServingFilamentEvent;
 use Filament\Http\Middleware\DisableBladeIconComponents;
 use Filament\Http\Middleware\Authenticate;
-use App\Livewire\WeatherChart;
+use App\Filament\Widgets\WeatherWidget;
+use App\Filament\Pages\Dashboard;
 
 class AdminPanelProvider extends PanelProvider
 {
@@ -37,13 +36,9 @@ class AdminPanelProvider extends PanelProvider
             ])
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')
-            ->pages([
-                Pages\Dashboard::class,
-            ])
+            ->pages([])
             ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\\Filament\\Widgets')
-            ->widgets([
-                WeatherChart::class,
-            ])
+            ->widgets([])
             ->middleware([
                 EncryptCookies::class,
                 AddQueuedCookiesToResponse::class,
@@ -54,13 +49,12 @@ class AdminPanelProvider extends PanelProvider
                 SubstituteBindings::class,
                 DisableBladeIconComponents::class,
                 DispatchServingFilamentEvent::class,
-                SetTheme::class
-
+                SetTheme::class,
             ])
             ->authMiddleware([
                 Authenticate::class,
             ])
-            ->topNavigation()
+            // ->topNavigation()
             ->plugins([
                 FilamentGeneralSettingsPlugin::make(),
                 ThemesPlugin::make(),

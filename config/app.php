@@ -123,4 +123,9 @@ return [
         'store' => env('APP_MAINTENANCE_STORE', 'database'),
     ],
 
+    'aliases' => [
+        'IpInfo' => App\Facades\IpInfo::class,
+        'WeatherInfo' => App\Facades\WeatherInfo::class,
+    ],
+
 ];

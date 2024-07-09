@@ -2,36 +2,22 @@
 
 namespace App\Filament\Resources;
 
-use Tables\Actions\EditAction;
-use Tables\Actions\DeleteBulkAction;
-use Tables\Actions\BulkActionGroup;
 use Malzariey\FilamentDaterangepickerFilter\Fields\DateRangePicker;
-use League\CommonMark\Extension\CommonMark\Parser\Inline\HtmlInlineParser;
-use JoseEspinal\RecordNavigation\Traits\HasRecordNavigation;
-use Illuminate\Support\HtmlString;
-use Illuminate\Http\Request;
 use Filament\Tables\Table;
-use Filament\Tables\Columns\ViewColumn;
 use Filament\Tables\Columns\TextColumn;
-use Filament\Tables\Columns\Layout\View;
-use Filament\Tables\Columns\Layout\Split;
+use Filament\Tables\Columns\SpatieMediaLibraryImageColumn;
 use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables;
 use Filament\Resources\Resource;
 use Filament\Forms\Form;
 use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Section;
 use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\Group;
 use Filament\Forms\Components\Grid;
-use Filament\Forms\Components\FileUpload;
-use Filament\Forms\Components\DateTimePicker;
-use Filament\Forms\Components\DatePicker;
-use Coolsam\FilamentFlatpickr\Forms\Components\Flatpickr;
-use App\Models\Venue;
 use App\Models\Event;
-use App\Forms\Components\EventPreview;
 use App\Filament\Resources\EventResource\Pages\ListEvents;
 use App\Filament\Resources\EventResource\Pages\EditEvent;
 use App\Filament\Resources\EventResource\Pages\CreateEvent;
@@ -101,12 +87,14 @@ class EventResource extends Resource
                             ->columnSpan(8)
                             ->columns(12),
                         Group::make([
-                            FileUpload::make('poster')
-                                ->required(fn (Event $event) => !$event->exists)
-                                ->directory('events')
-                                ->image(),
-                            // FileUpload::make('media')
-                            //     ->multiple(),
+                            SpatieMediaLibraryFileUpload::make('poster')
+                                ->directory('posters')
+                                ->conversion('thumb')
+                                ->responsiveImages(),
+                            SpatieMediaLibraryFileUpload::make('media')
+                                ->directory('medias')
+                                ->multiple()
+                                ->reorderable(),
                         ])->columnSpan(4),
                     ])->columns(12)
                 ])

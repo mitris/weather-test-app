@@ -1,9 +1,9 @@
 <?php
 
-use Monolog\Handler\NullHandler;
-use Monolog\Handler\StreamHandler;
-use Monolog\Handler\SyslogUdpHandler;
 use Monolog\Processor\PsrLogMessageProcessor;
+use Monolog\Handler\SyslogUdpHandler;
+use Monolog\Handler\StreamHandler;
+use Monolog\Handler\NullHandler;
 
 return [
 
@@ -63,6 +63,12 @@ return [
             'path' => storage_path('logs/laravel.log'),
             'level' => env('LOG_LEVEL', 'debug'),
             'replace_placeholders' => true,
+        ],
+
+        'weather' => [
+            'driver' => 'single',
+            'path' => storage_path('logs/weather.log'),
+            'level' => env('LOG_LEVEL', 'error'),
         ],
 
         'daily' => [

@@ -1,3 +1,275 @@
+@import url("https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Cuprum:ital@0;1&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.weather-collection {
+    @apply overflow-hidden max-w-xl  outline  outline-8 outline-white/10 border-2 border-white/40 rounded-xl relative;
+
+    &:hover {
+        @apply shadow-xl duration-300 outline-amber-400/40;
+    }
+
+    .controlls {
+        @apply absolute gap-1 p-1 z-50 right-3 top-3 bg-white flex flex-nowrap rounded-xl outline-4 outline outline-white/40;
+        a {
+            @apply block;
+            img,
+            svg {
+                @apply w-8 h-8 rounded-xl p-1.5;
+            }
+            &:hover svg,
+            &:hover img,
+            &.active svg,
+            &.active img {
+                @apply bg-lime-100;
+            }
+            &.active svg,
+            &.active img {
+                @apply bg-lime-400 duration-300;
+            }
+        }
+    }
+
+    .title {
+        @apply text-lg font-bold p-3.5 pb-2 bg-green-600 text-white drop-shadow-lg border-b border-white border-dashed;
+        text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.6);
+    }
+}
+.weather-card {
+    @apply bg-gradient-to-br w-full min-w-full shadow-inner shadow-black/30;
+
+    &.precipitation {
+        @apply bg-blue-600 from-blue-800 to-blue-950/80;
+    }
+
+    &.air {
+        @apply bg-amber-50 from-amber-100 to-amber-200/80 text-black/50;
+    }
+
+    &.water {
+        @apply bg-sky-300 from-sky-400 to-sky-900/80;
+    }
+
+    &.wind {
+        @apply bg-zinc-600 from-zinc-800 to-zinc-950/80;
+    }
+
+    .meter {
+        @apply flex flex-col leading-tight gap-0 items-center shadow-white/10 drop-shadow-lg shadow-lg bg-gradient-to-tl
+         from-white/10 bg-white px-6 text-green-600
+         drop-shadow-lg;
+
+        .value {
+            @apply text-blue-400;
+        }
+    }
+
+    .chart {
+        @apply relative;
+    }
+
+    .parameters {
+        @apply flex flex-wrap drop-shadow-lg gap-2 p-4;
+
+        .item {
+            @apply flex items-center leading-tight gap-2;
+
+            .icon {
+                @apply w-8 p-1 bg-white/80 rounded;
+            }
+
+            .value {
+                @apply font-bold text-sm;
+            }
+
+            .label {
+                @apply text-xs;
+            }
+        }
+    }
+
+    .weather-chart {
+        @apply w-full;
+    }
+}
+
+.weather-alt-wrapper {
+    @apply bg-white col-span-2 outline outline-8 outline-white/50 rounded;
+}
+
+.weather-alt {
+    @apply grid grid-cols-3 w-full text-slate-900 kanit-regular overflow-hidden;
+
+    main {
+        @apply col-span-2  bg-zinc-100 shadow-inner shadow-black/20 drop-shadow-lg;
+
+        header {
+            @apply p-6 border-b border-b-zinc-200 bg-black/5 w-full flex justify-between items-center;
+
+            .time {
+                @apply bg-sky-700 text-white py-2 px-3 rounded text-lg;
+                text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.5);
+            }
+        }
+
+        .overview {
+
+            @apply duration-300 bg-gray-200 p-6 relative rounded-xl drop-shadow-md outline outline-1 outline-white/70 shadow-inner shadow-slate-100/5 gap-2 text-nowrap grid grid-cols-3 items-center;
+
+            .icon img {
+                @apply w-10;
+            }
+
+            .caption {
+                @apply text-zinc-500;
+            }
+
+            .value {
+                @apply text-slate-700 text-3xl;
+            }
+
+            &:hover {
+                @apply scale-110 duration-100;
+            }
+        }
+    }
+
+    aside {
+        @apply p-4 bg-gradient-to-br from-[#43546e] via-[#132c4c] to-[#17397f] text-white shadow shadow-black relative z-10;
+    }
+}
+
+.cuprum {
+    font-family: "Cuprum", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.cuprum-light {
+    font-family: "Cuprum", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 200;
+    font-style: normal;
+}
+
+.amatic-sc-regular {
+    font-family: "Amatic SC", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.amatic-sc-bold {
+    font-family: "Amatic SC", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+.kanit-thin {
+    font-family: "Kanit", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+}
+
+.kanit-extralight {
+    font-family: "Kanit", sans-serif;
+    font-weight: 200;
+    font-style: normal;
+}
+
+.kanit-light {
+    font-family: "Kanit", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+
+.kanit-regular {
+    font-family: "Kanit", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.kanit-medium {
+    font-family: "Kanit", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.kanit-semibold {
+    font-family: "Kanit", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.kanit-bold {
+    font-family: "Kanit", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.kanit-extrabold {
+    font-family: "Kanit", sans-serif;
+    font-weight: 800;
+    font-style: normal;
+}
+
+.kanit-black {
+    font-family: "Kanit", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+}
+
+.kanit-thin-italic {
+    font-family: "Kanit", sans-serif;
+    font-weight: 100;
+    font-style: italic;
+}
+
+.kanit-extralight-italic {
+    font-family: "Kanit", sans-serif;
+    font-weight: 200;
+    font-style: italic;
+}
+
+.kanit-light-italic {
+    font-family: "Kanit", sans-serif;
+    font-weight: 300;
+    font-style: italic;
+}
+
+.kanit-regular-italic {
+    font-family: "Kanit", sans-serif;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.kanit-medium-italic {
+    font-family: "Kanit", sans-serif;
+    font-weight: 500;
+    font-style: italic;
+}
+
+.kanit-semibold-italic {
+    font-family: "Kanit", sans-serif;
+    font-weight: 600;
+    font-style: italic;
+}
+
+.kanit-bold-italic {
+    font-family: "Kanit", sans-serif;
+    font-weight: 700;
+    font-style: italic;
+}
+
+.kanit-extrabold-italic {
+    font-family: "Kanit", sans-serif;
+    font-weight: 800;
+    font-style: italic;
+}
+
+.kanit-black-italic {
+    font-family: "Kanit", sans-serif;
+    font-weight: 900;
+    font-style: italic;
+}

@@ -2,6 +2,7 @@
 
 namespace App\Livewire;
 
+use Illuminate\Support\Facades\DB;
 use Filament\Widgets\ChartWidget;
 use App\Models\Event;
 
@@ -15,7 +16,7 @@ class WeatherChart extends ChartWidget
 
     protected function getData(): array
     {
-        $data = cache()->remember('events', 3600, fn() => Event::where('date_start', '>=', now()->startOfMonth())->groupBy(\DB::raw('DATE(date_start)'))->select(\DB::raw('COUNT(id) as counts'), \DB::raw('DATE(date_start) as date'))->orderBy('date_start')->pluck('counts', 'date')->toArray());
+        $data = cache()->remember('events', 3600, fn() => Event::where('date_start', '>=', now()->startOfMonth())->groupBy(DB::raw('DATE(date_start)'))->select(DB::raw('COUNT(id) as counts'), DB::raw('DATE(date_start) as date'))->orderBy('date_start')->pluck('counts', 'date')->toArray());
 
         return [
             'datasets' => [
